@@ -48,6 +48,12 @@ public class UserHibernateDaoImpl implements IUserDao {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public void updateUserLastLogin(User user) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

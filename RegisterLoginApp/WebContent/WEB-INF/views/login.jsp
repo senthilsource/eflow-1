@@ -7,4 +7,7 @@ Password:  <form:password path="password"/><br/>
 <input type="submit" value="Submit" />
  <br/>
  New User? Click here to <a href="/RegisterLoginApp/register.do">Register</a>
+ <br/>
+  Click here to <a href="/RegisterLoginApp/logout.do">Logout</a>
+ 
 </form:form>

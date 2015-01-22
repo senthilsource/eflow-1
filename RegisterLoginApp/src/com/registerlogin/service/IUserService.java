@@ -13,5 +13,6 @@ public interface IUserService {
 	
 	public boolean validateUser(String userName, String password);
 	public boolean saveUser(User user);
+	public void updateUserLastLogin(User user);
 
 }

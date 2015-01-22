@@ -66,4 +66,10 @@ public class UserDaoImpl implements IUserDao{
 		}
 		return false;
 	}
+
+	@Override
+	public void updateUserLastLogin(User user) {
+		// TODO Auto-generated method stub
+		
+	}
 }

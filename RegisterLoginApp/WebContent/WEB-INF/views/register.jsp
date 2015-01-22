@@ -9,4 +9,5 @@ Password:  <form:input path="password"/>
 <input type="submit" value="submit"/>
 </form:form>
 <br/><br/>
-Click here to <a href="/RegisterLoginApp/login.do">Login</a>
+Click here to <a href="/RegisterLoginApp/login.do">Login</a><br/>
+  Click here to <a href="/RegisterLoginApp/logout.do">Logout</a>

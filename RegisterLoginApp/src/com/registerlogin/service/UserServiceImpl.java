@@ -34,6 +34,11 @@ public class UserServiceImpl implements IUserService {
 		return flag;
 		
 	}
+
+	@Override
+	public void updateUserLastLogin(User user) {
+		userDao.updateUserLastLogin(user);
+	}
 	
 
 }
