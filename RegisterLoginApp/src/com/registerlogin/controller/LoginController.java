@@ -5,6 +5,8 @@ package com.registerlogin.controller;
 
 
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -41,7 +43,7 @@ public class LoginController {
 	
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public ModelAndView processLogin(@ModelAttribute("form") LoginForm loginForm){
+	public ModelAndView processLogin(HttpServletRequest request,@ModelAttribute("form") LoginForm loginForm){
 		System.out.println("in controller");
 		ModelAndView mv = new ModelAndView();
 		
@@ -56,6 +58,7 @@ public class LoginController {
 			user.setUserName(loginForm.getUserName());
 			user.setPassword(loginForm.getPassword());
 			userService.updateUserLastLogin(user);
+			request.getSession().setAttribute("userName", loginForm.getUserName());;
 			mv.setViewName("loginSuccess");
 			return mv;
 		}

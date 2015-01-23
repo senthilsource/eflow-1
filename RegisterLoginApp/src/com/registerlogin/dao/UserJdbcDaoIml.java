@@ -70,4 +70,10 @@ public class UserJdbcDaoIml implements IUserDao {
 		this.jdbcTemplate.update("update User set Last_Login_dt = ? where username=? and password = ?", now, user.getUserName(), user.getPassword());
 		
 	}
+
+	@Override
+	public void updateLastLogout(String userName) {
+		Date now = Calendar.getInstance().getTime();
+		this.jdbcTemplate.update("update User set Last_Logout_dt = ? where userName=? " , now, userName);
+	}
 }

@@ -54,6 +54,12 @@ public class UserHibernateDaoImpl implements IUserDao {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void updateLastLogout(String userName) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

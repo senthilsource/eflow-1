@@ -39,6 +39,11 @@ public class UserServiceImpl implements IUserService {
 	public void updateUserLastLogin(User user) {
 		userDao.updateUserLastLogin(user);
 	}
+
+	@Override
+	public void updateLastLogout(String userName) {
+		userDao.updateLastLogout(userName);
+	}
 	
 
 }

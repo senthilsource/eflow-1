@@ -8,6 +8,5 @@ Password:  <form:password path="password"/><br/>
  <br/>
  New User? Click here to <a href="/RegisterLoginApp/register.do">Register</a>
  <br/>
-  Click here to <a href="/RegisterLoginApp/logout.do">Logout</a>
  
 </form:form>
