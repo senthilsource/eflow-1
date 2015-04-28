@@ -9,7 +9,7 @@
 <body>
 This portal is under development. Please check back again !!
 
-All right reserved -eBusiness Solutions, Inc.
+All rights reserved -eBusiness Solutions, Inc.
 
 </body>
 </html>
