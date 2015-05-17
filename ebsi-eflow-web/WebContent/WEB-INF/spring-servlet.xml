@@ -1,0 +1,60 @@
+<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<context:component-scan base-package="com.ebsi.eflow" />
+	
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix">
+			<beans:value>/eflow/</beans:value>
+		</beans:property>
+		<beans:property name="suffix">
+			<beans:value>.jsp</beans:value>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<beans:property name="order" value="1" />
+		<beans:property name="messageConverters">
+			<beans:list>
+				<!-- Default converters -->
+				<beans:bean
+					class="org.springframework.http.converter.StringHttpMessageConverter" />
+				<beans:bean
+					class="org.springframework.http.converter.FormHttpMessageConverter" />
+				<beans:bean
+					class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<beans:bean
+					class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+				<beans:bean
+					class="org.springframework.http.converter.BufferedImageHttpMessageConverter" />
+				<beans:bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<!-- Register the messages.properties -->
+	<beans:bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<beans:property name="basename" value="resources/messages" />
+	</beans:bean>
+
+	<!-- <beans:bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/> -->
+	<beans:bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver">
+	</beans:bean>
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</beans:bean>
+	
+</beans:beans>
