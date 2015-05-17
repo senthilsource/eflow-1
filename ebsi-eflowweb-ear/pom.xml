@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>ebsi-eflowweb-ear</artifactId>
+  <packaging>ear</packaging>
+  
+   <dependencies>
+		<dependency>
+			<groupId>com.ebsi.eflow</groupId>
+			<artifactId>ebsi-eflow-web</artifactId>
+			<version>${project.parent.version}</version>
+			<type>war</type>
+		</dependency>		
+   </dependencies>
+   
+  <parent>
+  	<groupId>com.ebsi.eflow</groupId>
+  	<artifactId>ebsi-eflowweb-parent</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<relativePath>../ebsi-eflowweb-parent/pom.xml</relativePath>
+  </parent>
+  
+  <profiles>
+		<profile>
+			<id>build</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-ear-plugin</artifactId>
+						<version>${maven-ear-plugin}</version>
+						<configuration>
+							<packagingExcludes>*.jar</packagingExcludes>
+							<modules>								
+								<webModule>
+									<groupId>com.ebsi.eflow</groupId>
+									<artifactId>ebsi-eflow-web</artifactId>
+									<contextRoot>/eflow</contextRoot>
+								</webModule>
+							</modules>
+						</configuration>
+					</plugin>
+				</plugins>
+				<finalName>eflow-webapp</finalName>
+			</build>
+		</profile>
+	</profiles>
+</project>
