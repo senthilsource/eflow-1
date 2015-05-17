@@ -13,7 +13,7 @@
   	<relativePath>../ebsi-eflowweb-parent/pom.xml</relativePath>
   </parent>
   
-  <!-- Build description for the application -->
+  <!-- Build description for the application-->
 	<build>
 		<plugins>
 			<plugin>
